@@ -16,11 +16,11 @@ Vagrant.configure(2) do |config|
 
   config.vm.define "server1", primary: true do |server1|
     server1.vm.network "private_network", ip: "192.168.1.2", virtualbox__intnet: "fm_local_network"
-    server1.vm.network "forwarded_port", guest: 22, host: 1022, id: "ssh"
+    server1.vm.network "forwarded_port", guest: 22, host: 10022, id: "ssh"
   end
 
   config.vm.define "server2", primary: true do |server2|
     server2.vm.network "private_network", ip: "192.168.1.3", virtualbox__intnet: "fm_local_network"
-    server2.vm.network "forwarded_port", guest: 22, host: 2022, id: "ssh"
+    server2.vm.network "forwarded_port", guest: 22, host: 20022, id: "ssh"
   end
 end
